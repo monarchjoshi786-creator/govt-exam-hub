@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Govt Exam Hub — ₹10 Full Access</title>
+<style>
+:root{--ink:#14213d;--muted:#667085;--bg:#f7f8fc;--card:#fff;--line:#e7eaf0;--accent:#ff6b35;--accent2:#2563eb;--ok:#16803c}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:800}.brand span{color:var(--accent)}
+button{border:0;border-radius:10px;padding:11px 17px;font-weight:700;cursor:pointer}.access{background:var(--accent);color:#fff}.outline{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.hero{background:linear-gradient(135deg,#14213d,#203b73);color:#fff;padding:72px 22px}.hero-inner{max-width:1160px;margin:auto}.badge{display:inline-block;background:#ffffff18;border:1px solid #ffffff35;padding:7px 12px;border-radius:99px;font-size:13px}.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.02;max-width:760px;margin:18px 0 14px}.hero p{font-size:18px;color:#dbe4f7;max-width:680px}.search{margin-top:28px;display:flex;max-width:760px;background:#fff;padding:6px;border-radius:14px}.search input{flex:1;border:0;outline:0;padding:15px;font-size:16px;border-radius:10px}.search button{background:var(--accent2);color:#fff}
+main{max-width:1160px;margin:0 auto;padding:42px 22px}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.section-title h2{margin:0;font-size:28px}.section-title p{color:var(--muted);margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 3px 12px #14213d08}.exam{transition:.18s}.exam:hover{transform:translateY(-2px);box-shadow:0 10px 25px #14213d12}.exam h3{margin:0 0 5px}.exam small{color:var(--muted)}.pill{display:inline-block;margin-top:13px;font-size:12px;padding:5px 9px;border-radius:99px;background:#eef4ff;color:#2859ad}
+#results{margin-top:18px}.result{display:flex;align-items:center;justify-content:space-between;gap:15px}.result h3{margin:0}.result p{margin:6px 0 0;color:var(--muted)}
+.feature{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:35px 0}.feature .card{min-height:150px}.icon{font-size:28px}.price{text-align:center;background:#fff;border:2px solid var(--accent);border-radius:20px;padding:30px;max-width:520px;margin:50px auto}.price strong{font-size:46px}.price p{color:var(--muted)}
+footer{background:#14213d;color:#dbe4f7;padding:35px 22px;text-align:center}
+.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modalbox{background:#fff;border-radius:20px;padding:28px;max-width:430px;width:100%}.modalbox h2{margin-top:0}.pay{width:100%;background:var(--accent);color:#fff;font-size:16px}.close{float:right;background:#f1f3f6;padding:6px 10px}
+.lock{color:#b54708;font-weight:700;font-size:13px}
+@media(max-width:700px){.feature{grid-template-columns:1fr}.nav .outline{display:none}.hero{padding:50px 18px}.search{display:block;background:transparent;padding:0}.search input{width:100%;margin-bottom:8px}.search button{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">Govt<span>Exam</span>Hub</div><button class="access" onclick="openPay()">₹10 Full Access</button></div></header>
+
+<section class="hero"><div class="hero-inner">
+<span class="badge">One payment • Everything accessible</span>
+<h1>Every government exam. One simple study hub.</h1>
+<p>Search syllabi, subjects, topics, PYQs, MCQs and downloadable study material — designed around the ₹10 full-access model.</p>
+<div class="search"><input id="search" placeholder="Search exam, subject or topic…" oninput="searchSite()"><button onclick="searchSite()">Search</button></div>
+<div id="results"></div>
+</div></section>
+
+<main>
+<section>
+<div class="section-title"><div><h2>Browse exams</h2><p>Start with the exam you are preparing for.</p></div></div>
+<div class="grid" id="examGrid"></div>
+</section>
+
+<section class="feature">
+<div class="card"><div class="icon">🔎</div><h3>Search everything</h3><p>Find an exam, subject, topic or study resource from one search box.</p></div>
+<div class="card"><div class="icon">📥</div><h3>Download resources</h3><p>Notes, PYQs, MCQs, revision sheets and maps can live under each topic.</p></div>
+<div class="card"><div class="icon">₹</div><h3>Only ₹10</h3><p>One-time access to the whole platform instead of charging for every PDF.</p></div>
+</section>
+
+<section>
+<div class="section-title"><div><h2>Example: RAS</h2><p>Topic structure for a Rajasthan-focused launch.</p></div></div>
+<div class="grid">
+<div class="card"><h3>Rajasthan Geography</h3><p>Physiography • Climate • Rivers • Lakes • Minerals • Agriculture • Population</p><span class="pill">Notes + PYQs + MCQs</span></div>
+<div class="card"><h3>Rajasthan History</h3><p>Ancient • Medieval • Modern • Art & Culture • Important personalities</p><span class="pill">Downloadable</span></div>
+<div class="card"><h3>Rajasthan Polity</h3><p>State government • Local bodies • Constitutional provisions • Current structure</p><span class="pill">Downloadable</span></div>
+<div class="card"><h3>Rajasthan Economy</h3><p>Agriculture • Industries • Minerals • Budget • Development indicators</p><span class="pill">Downloadable</span></div>
+</div>
+</section>
+
+<div class="price">
+<div class="lock">🔓 FULL PLATFORM ACCESS</div>
+<h2>Pay once</h2><strong>₹10</strong>
+<p>Access all available syllabus pages, notes, PYQs, MCQs and downloads on the platform.</p>
+<button class="access" onclick="openPay()">Get full access for ₹10</button>
+</div>
+</main>
+
+<footer>GovtExamHub • Independent exam-preparation platform • Syllabus information should be checked against the relevant official notification.</footer>
+
+<div class="modal" id="modal"><div class="modalbox">
+<button class="close" onclick="closePay()">×</button>
+<h2>Unlock full access</h2>
+<p>This demo uses a mock payment flow. Connect a real Indian payment gateway before accepting payments.</p>
+<p><strong>Amount: ₹10</strong></p>
+<button class="pay" onclick="unlock()">Simulate successful ₹10 payment</button>
+</div></div>
+
+<script>
+const exams=[
+["UPSC Civil Services","UPSC","Prelims • Mains • Optional subjects"],
+["SSC CGL","SSC","Tier structure • Subjects • PYQs"],
+["SSC CHSL","SSC","Tier structure • Subjects • PYQs"],
+["IBPS PO","Banking","Prelims • Mains • Banking awareness"],
+["SBI PO","Banking","Prelims • Mains • Practice"],
+["RRB NTPC","Railways","CBT • Subjects • PYQs"],
+["NDA","Defence","Mathematics • GAT • SSB"],
+["CDS","Defence","English • GK • Mathematics"],
+["RAS","Rajasthan","Prelims • Mains • Rajasthan-specific syllabus"],
+["Rajasthan CET","Rajasthan","Senior secondary • Graduate level"],
+["REET","Teaching","Level 1 • Level 2"],
+["Rajasthan Police","Police","Written exam • Reasoning • GK"],
+["UPPSC PCS","State PSC","Prelims • Mains"],
+["BPSC","State PSC","Prelims • Mains"],
+["MPPSC","State PSC","Prelims • Mains"],
+["HPSC HCS","State PSC","Prelims • Mains"]
+];
+const grid=document.getElementById("examGrid");
+function render(items=exams){grid.innerHTML=items.map(e=>`<div class="card exam" onclick="examClick('${e[0]}')"><h3>${e[0]}</h3><small>${e[2]}</small><br><span class="pill">${e[1]}</span></div>`).join("")}
+function searchSite(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ const found=exams.filter(e=>e.join(" ").toLowerCase().includes(q));
+ document.getElementById("results").innerHTML=q?`<div class="card" style="color:#14213d"><strong>${found.length} result${found.length!==1?"s":""}</strong>${found.slice(0,6).map(e=>`<div class="result" style="padding:12px 0;border-bottom:1px solid #eee"><div><h3>${e[0]}</h3><p>${e[1]} • ${e[2]}</p></div><button class="outline" onclick="examClick('${e[0]}')">Open</button></div>`).join("")}</div>`:"";
+}
+function examClick(name){alert(name+" page: this is the prototype. The production version will contain the complete syllabus, topic tree, PDFs, PYQs and MCQs.");}
+function openPay(){document.getElementById("modal").classList.add("open")}
+function closePay(){document.getElementById("modal").classList.remove("open")}
+function unlock(){localStorage.setItem("access","1");closePay();alert("Demo access unlocked. In production, this button will verify the ₹10 payment on the server.");}
+render();
+</script>
+</body></html>
